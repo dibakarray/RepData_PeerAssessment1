@@ -169,7 +169,19 @@ levels(dtWithOutMsng$weekdays)
 ```{r, echo=TRUE}
 # calculate average steps by interval across all days
 aggrdtWithOutMsng <- aggregate(steps ~ interval + weekdays , dtWithOutMsng, FUN = "mean")
+
 ##Now draw a plot
+##Important Concept - Conditioning in Lattice Graphics
+## Conditioning, allows us to view relationships across "panels" with common scales. Each panel contains a plot 
+## whose data is  "conditional" upon records drawn from the category that supports that particular panel 
+
+##The "aggrdtWithOutMsng$steps ~ aggrdtWithOutMsng$interval part of the call to xyplot represents 
+## the formula where steps represents the y-axis and interval represents the x-axis.
+## Conditioning variable which is typically a category/factor is represened after "|". It also let's us
+## know that the resulting plot will contain a number of panels the number of which will correspond to
+##the number of unique values assumed by the conditioning variable. In the case of  aggrdtWithOutMsng$weekdays  
+## this will be two  since the unique values assumed by weekdays are weekday and Weekend.
+
 xyplot(aggrdtWithOutMsng$steps ~ aggrdtWithOutMsng$interval | aggrdtWithOutMsng$weekdays, 
        layout = c(1, 2), type = "l", 
        xlab = "Interval", ylab = "Average Number of Steps")

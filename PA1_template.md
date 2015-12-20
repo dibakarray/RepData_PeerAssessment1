@@ -158,6 +158,8 @@ maxAvgSteps
 ## 104      835 206.1698
 ```
 
+**835 th intrval has the maximum numer of steps**
+
 ## Imputing missing values
 Note that there are a number of days/intervals where there are missing values (coded as NA). The presence of missing days may introduce bias into some calculations or summaries of the data.
 

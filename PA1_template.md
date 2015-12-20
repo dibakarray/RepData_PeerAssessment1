@@ -176,7 +176,7 @@ cat("Total number of missing values in the dataset =",length(which(is.na(dt))))
 ```
 ###2. Devise a strategy for filling in all of the missing values in the dataset. The strategy does not need to be sophisticated. For example, you could use the mean/median for that day, or the mean for that 5-minute interval, etc.
 
-**_A simple strategy would be to find out NA for an interval and replace it with the average number of steps for that interval_**
+**_A simple strategy would be to find out NA for an interval and replace it with the average number of steps for that interval. Code is shown under item 3._**
 
 ### 3.Create a new dataset that is equal to the original dataset but with the missing data filled in.
 
